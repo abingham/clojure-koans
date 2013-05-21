@@ -1,6 +1,6 @@
 (meditations
   "You can create a set by converting another collection"
-  (= #{3} (set '(3)))
+  (= #{3} (set [3]))
 
   "Counting them is like counting other collections"
   (= 3 (count #{1 2 3}))
@@ -15,4 +15,4 @@
   (= #{2 3} (clojure.set/intersection #{1 2 3 4} #{2 3 5}))
 
   "But don't forget about the difference"
-  (= #{1 4} (clojure.set/difference #{1 2 3 4 5} #{2 3 5})))
+  (= #{4 1} (clojure.set/difference #{1 2 3 4 5} #{2 3 5})))
