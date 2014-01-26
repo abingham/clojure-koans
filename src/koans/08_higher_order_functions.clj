@@ -9,16 +9,16 @@
   (= [false false true false false] (map nil? [:a :b nil :c :d]))
 
   "A filter can be strong"
-  (= '() (filter (fn [x] false) '(:anything :goes :here)))
+  (= [] (filter (fn [x] false) '(:anything :goes :here)))
 
   "Or very weak"
   (= '(:anything :goes :here) (filter (fn [x] true) '(:anything :goes :here)))
 
   "Or somewhere in between"
-  (= [10 20 30] (filter (fn [x] (<= x 30)) [10 20 30 40 50 60 70 80]))
+  (= [10 20 30] (filter (fn [x] (< x 40)) [10 20 30 40 50 60 70 80]))
 
   "Maps and filters may be combined"
-  (= [10 20 30] (map (fn [x] (* x 10)) (filter (fn [x] (<= x 3)) [1 2 3 4 5 6 7 8])))
+  (= [10 20 30] (map (fn [x] (* x 10)) (filter (fn [x] (< x 4)) [1 2 3 4 5 6 7 8])))
 
   "Reducing can increase the result"
   (= 24 (reduce (fn [a b] (* a b)) [1 2 3 4]))

@@ -28,14 +28,14 @@
 
   "You may have a multitude of possible paths"
   (let [x 5]
-    (= :your-road (cond (= x 3) :road-not-taken
-                        (= x 4) :another-road-not-taken
+    (= :your-road (cond (= x 1) :road-not-taken
+                        (= x 2) :another-road-not-taken
                         :else :your-road)))
 
   "Or your fate may be sealed"
-  (= 'doom (if-not (zero? 0)
-          'doom
-          'doom))
+  (= 'doom (if-not (zero? 1)
+             'doom
+             'doom))
 
   "In case of emergency, sound the alarms"
   (= :sirens
