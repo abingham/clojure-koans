@@ -1,6 +1,6 @@
 (meditations
   "Sequence comprehensions can bind each element in turn to a symbol"
-  (= '(0 1 2 3 4 5)
+  (= (range 6)
      (for [index (range 6)]
        index))
 
